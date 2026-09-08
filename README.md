@@ -12,28 +12,31 @@ Built as a full-stack portfolio project to demonstrate end-to-end product develo
 
 ## Screenshots
 
+Captured from the live app on September 8, 2026.
+
 ### Landing page
 
 ![Prep Pilot landing page](docs/screenshots/landing.png)
 
-### Dashboard — resume upload
+### Practice dashboard
 
-![Prep Pilot dashboard with resume upload](docs/screenshots/dashboard.png)
+Resume existing sessions or configure a new interview by resume, target role, difficulty, and interview focus.
 
-### Job description analysis
-
-![Job description saved with extracted technologies and keywords](docs/screenshots/job-description.png)
-
-### Generate interview
-
-![Generate interview from resume and job description](docs/screenshots/generate-interview.png)
+![Prep Pilot practice dashboard](docs/screenshots/dashboard.png)
 
 ### Interview session
 
-![Interview session with personalized questions](docs/screenshots/interview-session.png)
+Work through personalized questions, write an answer, and request feedback or save a draft.
+
+![Prep Pilot interview question and answer workspace](docs/screenshots/interview-session.png)
+
+### Answer guidance
+
+Review a coaching outline, supporting resume excerpts, and prompts for details to add from your own experience.
+
+![Prep Pilot answer guidance](docs/screenshots/answer-guidance.png)
 
 ---
-
 ## Why this project?
 
 Technical interviews are high-stakes, but most prep tools use generic question banks. Prep Pilot takes a different approach:
