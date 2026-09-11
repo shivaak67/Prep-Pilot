@@ -1,45 +1,35 @@
 const steps = [
-  {
-    step: "1",
-    title: "Upload your resume",
-    description: "Add a PDF resume so Prep Pilot understands your skills and projects.",
-  },
-  {
-    step: "2",
-    title: "Add a job description",
-    description: "Paste the role you are targeting to focus practice on the right requirements.",
-  },
-  {
-    step: "3",
-    title: "Generate an interview",
-    description: "Get personalized technical, behavioral, and project-specific questions.",
-  },
-  {
-    step: "4",
-    title: "Answer, review, and retry",
-    description: "Submit your answer, get specific feedback, then practice a stronger attempt or follow-up.",
-  },
+  [
+    "Bring your resume",
+    "Upload a PDF with your skills, experience, and projects.",
+  ],
+  [
+    "Choose your role",
+    "Paste a job description and choose your interview focus.",
+  ],
+  [
+    "Practice out loud, then write",
+    "Put your reasoning into an answer before opening the guidance.",
+  ],
+  [
+    "Review. Refine. Repeat.",
+    "Use feedback to improve your answer or tackle a follow-up.",
+  ],
 ];
-
 export default function HowItWorksSection() {
   return (
-    <section className="border-t border-gray-200 bg-gray-50">
-      <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
-        <h2 className="text-center text-2xl font-bold">How it works</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
-          Four steps to a focused practice routine.
-        </p>
-        <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((item) => (
-            <li
-              key={item.step}
-              className="rounded border border-gray-200 bg-white p-5"
-            >
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-black text-sm font-medium text-white">
-                {item.step}
-              </span>
-              <h3 className="mt-4 font-semibold text-gray-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{item.description}</p>
+    <section id="how-it-works" className="how-section">
+      <div className="site-width">
+        <div className="section-heading">
+          <p className="eyebrow">A SIMPLE ROUTINE</p>
+          <h2>From your resume to your next interview.</h2>
+        </div>
+        <ol className="steps-grid">
+          {steps.map(([title, text], i) => (
+            <li key={title}>
+              <span>0{i + 1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
             </li>
           ))}
         </ol>

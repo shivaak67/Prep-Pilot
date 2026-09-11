@@ -1,16 +1,28 @@
 """Local browser smoke fixture. Never used by the production entry point."""
 from unittest.mock import patch
+from threading import Lock
 import uvicorn
 from tests.test_practice import PracticeTests
 from app.api.deps import get_current_user
 from app.core.security import hash_password
 from app.main import app
+from app.core.database import get_db
 from app.schemas.practice import Feedback
 from app.services.interview_generator import GeneratedQuestionDraft
 from app.services.answer_generator import SuggestedAnswerDraft
 
 fixture = PracticeTests()
 fixture.setUp()
+# The in-memory fixture shares one connection; serialize its requests just here.
+# Production uses a separate database session per request.
+fixture_lock = Lock()
+def fixture_db():
+    with fixture_lock:
+        try:
+            yield fixture.db
+        finally:
+            fixture.db.rollback()
+app.dependency_overrides[get_db] = fixture_db
 app.dependency_overrides.pop(get_current_user, None)
 fixture.user.hashed_password = hash_password('SmokeTestOnly2026!')
 fixture.job.parsed_json = {'title': 'Sample Co — Frontend Engineer', 'technologies': ['React', 'TypeScript'], 'required_skills': ['React'], 'preferred_skills': ['Playwright']}

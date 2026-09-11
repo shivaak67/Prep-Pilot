@@ -12,11 +12,15 @@ Built as a full-stack portfolio project to demonstrate end-to-end product develo
 
 ## Screenshots
 
-Captured from the live app on September 8, 2026.
+Interface previews captured on September 11, 2026 using local sample data. See the [UI design notes](docs/ui-design.md) for the redesign direction and verification.
 
 ### Landing page
 
 ![Prep Pilot landing page](docs/screenshots/landing.png)
+
+### Sign in
+
+![Prep Pilot sign-in page](docs/screenshots/sign-in.png)
 
 ### Practice dashboard
 

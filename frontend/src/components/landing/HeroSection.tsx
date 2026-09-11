@@ -1,12 +1,83 @@
-import {Link} from 'react-router-dom';
-import {useAuth} from '../../contexts/useAuth';
+import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/useAuth";
 export default function HeroSection() {
-  const {user} = useAuth();
-  return <section className="bg-slate-50"><div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-    <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700">Interview practice, built around you</p><h1 className="mt-5 text-4xl font-bold leading-[1.12] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">Your experience.<br />A stronger answer.</h1><p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">Turn your resume and target role into focused interview practice. Try an answer, get specific feedback, and make your next attempt better.</p>
-    <div className="mt-8 flex flex-wrap gap-3"><Link className="rounded-lg bg-indigo-700 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-indigo-800" to={user ? '/dashboard' : '/register'}>{user ? 'Continue practicing →' : 'Start practicing free →'}</Link><a href="#sample" className="rounded-lg border border-gray-300 bg-white px-6 py-3.5 text-sm font-semibold transition hover:bg-gray-50">Explore a sample</a></div><p className="mt-4 text-xs text-slate-500">Technical · Behavioral · System design · Project deep dives</p></div>
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/50 sm:p-7"><div className="flex items-center justify-between border-b border-gray-100 pb-4"><span className="text-sm font-semibold">A better practice loop</span><span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">Your pace</span></div>
-      <ol className="mt-6 space-y-6">{[{title: 'Start with your experience', text: 'Questions connect your projects to the role you want.'}, {title: 'Put your reasoning into words', text: 'Practice first. Guidance is there when you need it.'}, {title: 'Find the missing detail', text: 'Get feedback on relevance, specificity, structure, and depth.'}, {title: 'Try again, with a clearer plan', text: 'Save attempts and practice a targeted follow-up.'}].map((step, i) => <li key={step.title} className="flex gap-4"><span className={`flex size-8 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${i === 3 ? 'bg-indigo-700 text-white' : 'bg-slate-100 text-slate-500'}`}>{i + 1}</span><div><h2 className="text-sm font-semibold">{step.title}</h2><p className="mt-1 text-sm leading-6 text-gray-500">{step.text}</p></div></li>)}</ol>
-    </div>
-  </div></section>;
+  const { user } = useAuth();
+  return (
+    <section className="hero">
+      <div className="site-width hero-grid">
+        <div className="hero-copy">
+          <p className="eyebrow">THE SOFTWARE ENGINEER’S PRACTICE ROOM</p>
+          <h1>
+            Know your work.
+            <br />
+            <em>Find your words.</em>
+          </h1>
+          <p className="hero-description">
+            You’ve done the work. Practice talking about it. Interview questions
+            from your resume, feedback on your answers, and room to try again.
+          </p>
+          <div className="hero-actions">
+            <Link
+              className="button-primary"
+              to={user ? "/dashboard" : "/register"}
+            >
+              {user ? "Open your workspace" : "Start practicing"}{" "}
+              <span aria-hidden="true">↗</span>
+            </Link>
+            <a href="#sample" className="text-action">
+              Try a sample ↓
+            </a>
+          </div>
+          <p className="hero-footnote">
+            Built for technical, behavioral & system design interviews.
+          </p>
+        </div>
+        <div
+          className="practice-preview"
+          aria-label="Illustrative interview practice preview"
+        >
+          <div className="preview-top">
+            <span className="status-dot" /> PRACTICE ROOM{" "}
+            <span className="ml-auto">01 / 08</span>
+          </div>
+          <div className="preview-context">
+            <span>Frontend engineer</span>
+            <span>Technical</span>
+          </div>
+          <h2>
+            Walk me through a technical decision you made in your last project.
+          </h2>
+          <div className="preview-answer">
+            <p className="eyebrow">YOUR APPROACH</p>
+            <p>
+              “We needed to keep the interface responsive while requests were
+              running. I considered two options…”
+            </p>
+            <span className="writing-caret" aria-hidden="true" />
+          </div>
+          <div className="preview-feedback">
+            <span className="feedback-mark" aria-hidden="true">
+              ↳
+            </span>
+            <div>
+              <strong>Go one level deeper.</strong>
+              <p>
+                What tradeoff did you make, and how did you know it was the
+                right one?
+              </p>
+            </div>
+          </div>
+          <div className="preview-bottom">
+            <span>Illustrative example</span>
+            <a href="#sample">Explore the practice loop ↗</a>
+          </div>
+        </div>
+      </div>
+      <div className="site-width hero-index">
+        <span>01 — YOUR EXPERIENCE</span>
+        <span>02 — THE ROLE</span>
+        <span>03 — BETTER ANSWERS</span>
+      </div>
+    </section>
+  );
 }
