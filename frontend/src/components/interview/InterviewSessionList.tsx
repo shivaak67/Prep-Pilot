@@ -43,10 +43,10 @@ export default function InterviewSessionList() {
   const hasSessions = (data?.length ?? 0) > 0;
 
   return (
-    <section className="rounded-xl border border-gray-200 bg-white p-5 sm:p-6">
+    <section className="session-list">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="font-semibold">Past sessions</h3>
+          <h3 className="font-semibold">Practice sessions</h3>
           <p className="mt-1 text-sm text-gray-600">
             Pick up where you left off on any previous interview.
           </p>
@@ -79,10 +79,14 @@ export default function InterviewSessionList() {
       )}
 
       {isLoading && (
-        <p className="mt-4 text-sm text-gray-500">Loading interview sessions...</p>
+        <p className="mt-4 text-sm text-gray-500">
+          Loading interview sessions...
+        </p>
       )}
       {isError && (
-        <p className="mt-4 text-sm text-red-600">Could not load interview sessions.</p>
+        <p className="mt-4 text-sm text-red-600">
+          Could not load interview sessions.
+        </p>
       )}
 
       {!isLoading && !isError && data?.length === 0 && (
@@ -92,7 +96,7 @@ export default function InterviewSessionList() {
       )}
 
       {!isLoading && !isError && data && data.length > 0 && (
-        <ul className="mt-4 grid gap-4 lg:grid-cols-2">
+        <ul className="session-rows">
           {data.map((session) => (
             <InterviewSessionCard
               key={session.id}

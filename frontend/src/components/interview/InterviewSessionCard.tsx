@@ -28,14 +28,16 @@ export default function InterviewSessionCard({
   }
 
   return (
-    <li className="rounded border border-gray-200 bg-white p-4 shadow-sm transition hover:border-gray-300">
+    <li className="session-row">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0 flex-1">
           <p className="truncate font-medium text-gray-900">
-            {session.job_description_preview || `Practice session #${session.id}`}
+            {session.job_description_preview ||
+              `Practice session #${session.id}`}
           </p>
           <p className="mt-1 line-clamp-2 text-sm text-gray-600">
-            {session.resume_filename} · {(session.interview_type || "mixed").replaceAll("_", " ")}
+            {session.resume_filename} ·{" "}
+            {(session.interview_type || "mixed").replaceAll("_", " ")}
           </p>
           <p className="mt-2 text-xs text-gray-500">
             {session.question_count} questions ·{" "}
@@ -52,7 +54,7 @@ export default function InterviewSessionCard({
         <div className="flex shrink-0 flex-col gap-2">
           <Link
             to={`/dashboard/sessions/${session.id}`}
-            className="rounded bg-black px-3 py-1.5 text-center text-xs text-white transition hover:bg-gray-800"
+            className="session-open"
           >
             Open
           </Link>
@@ -60,7 +62,7 @@ export default function InterviewSessionCard({
             type="button"
             onClick={handleDelete}
             disabled={isDeleting}
-            className="rounded border border-red-200 px-3 py-1.5 text-xs text-red-700 transition hover:bg-red-50 disabled:opacity-50"
+            className="session-delete disabled:opacity-50"
           >
             {isThisSessionDeleting ? "Deleting..." : "Delete"}
           </button>
