@@ -4,11 +4,11 @@ The September 2026 redesign gives Prep Pilot a consistent identity across the la
 
 ## Direction
 
-- Warm off-white surfaces and deep green actions; color communicates selection and emphasis.
-- Serif display typography on the public page, with system sans-serif text in the workspace. No external font requests.
+- White and light-gray surfaces with charcoal actions, subtle borders, and restrained shadows.
+- Simple sans-serif typography throughout. No external font requests.
 - A shared brand mark and workspace navigation; a compact horizontal navigation on mobile.
 - Session history uses divided rows. Session metadata is condensed so questions and writing get more space.
-- Product examples replace decorative feature cards. The interactive sample remains explicitly illustrative.
+- A compact public introduction leads directly to sign-in and account creation. Marketing sections and the interactive demo are removed.
 - Visible keyboard focus, labeled controls, reduced-motion support, and a skip link in the workspace.
 
 References: [Linear's UI redesign](https://linear.app/now/how-we-redesigned-the-linear-ui) for hierarchy and alignment, and [Raycast's interface refresh](https://www.raycast.com/blog/a-fresh-look-and-feel) for focused, compact interactions. Prep Pilot uses its own layout, colors, copy, and mark.

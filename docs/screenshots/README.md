@@ -1,6 +1,6 @@
 # Screenshots
 
-Interface previews captured on September 11, 2026 from the local smoke fixture. All account, resume, role, and feedback content is synthetic sample data.
+Interface previews refreshed for the neutral UI from the local smoke fixture. All account, resume, role, and feedback content is synthetic sample data.
 
 | File | Content |
 |------|---------|

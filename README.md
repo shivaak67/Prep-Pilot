@@ -12,7 +12,7 @@ Built as a full-stack portfolio project to demonstrate end-to-end product develo
 
 ## Screenshots
 
-Interface previews captured on September 11, 2026 using local sample data. See the [UI design notes](docs/ui-design.md) for the redesign direction and verification.
+Interface previews refreshed for the neutral UI using local sample data. See the [UI design notes](docs/ui-design.md) for the redesign direction and verification.
 
 ### Landing page
 
